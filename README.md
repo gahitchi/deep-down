@@ -46,7 +46,7 @@ git pull
 rojo serve
 ```
 
-Then in Studio: open a **Baseplate** (or our saved place), click **Rojo → Connect** in the Plugins tab, and press **Play**. You should see `Deep Down dev build … · sync OK` in the bottom-left corner and two `[Deep Down]` lines in the Output window.
+Then in Studio: open a **Baseplate** (or our saved place), click **Rojo → Connect** in the Plugins tab, and press **Play**. You should see the build version (for example `Deep Down v0.1.0 (dev)`) in the bottom-left corner and two `[Deep Down]` lines in the Output window.
 
 While `rojo serve` is running, any change to the files (from `git pull` or your editor) appears in Studio within a second.
 
