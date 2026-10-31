@@ -57,7 +57,7 @@ Define the product completely, and answer the biggest risks with small prototype
 **Risk prototypes** (each answers one question)
 
 - [x] Realistic darkness and lantern lighting in Godot (renders look right)
-- [ ] Runs at 60 fps at 1080p on archy's RTX 4050
+- [x] Runs at 60 fps at 1080p on archy's RTX 4050 (test level: 142 to 144 fps, capped by the 144 Hz screen)
 - [ ] Tension: is walking into the dark with only a lantern frightening on its own?
 - [ ] Stillness: does holding still and slowing your breath work as a way to survive?
 - [ ] Navigation: can players find their way back without a map, using landmarks and chalk?
