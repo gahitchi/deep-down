@@ -3,10 +3,14 @@
 First-person, single-player horror game in Godot 4.7 (Forward+, Jolt physics), for Steam. Owner: Gabriel (gahitchi). Proprietary, all rights reserved.
 
 Design doc (read before designing features): https://claude.ai/artifact/Qzxnq9YQ5ByK6qZw1ZnAFZ
+Roadmap (live): https://claude.ai/artifact/T3z4Nxph7qjtFj5cnJKX1a — snapshot in `docs/ROADMAP.md`.
 The Roblox prototype that came before is on the `archive/roblox-prototype` branch; it's history, not a reference for this code.
 
 ## Direction in one paragraph
-Grounded, environmental horror in an abandoned Alpine mine below a dying village. No combat. Realism is a priority: realistic lighting and materials, real mining logic in level design. The story is personal and existential (Buddhist themes: impermanence, attachment, presence), told through elders' tales and environment, never preached. A strange creature appears only mid-game.
+Grounded horror in the abandoned deep workings of a mine on a remote mountainous island (inspired by Sardinia's mining coast, changeable weather), below a dying village in the 2010s that runs on 80s and 90s equipment. No combat. Environmental horror in act one; a strange creature arrives mid-game. Realism is a priority: lighting and presentation that behave like real eyes, realistic materials, real mining logic in level design, big open spaces as well as tunnels. The story is personal and existential (duality of surface and depth; Buddhist, existentialist and nihilist ideas voiced by different elders), never preached.
+
+## Current phase
+Pre-production (roadmap phase 0): defining the product before more code. Don't start new features unless Gabriel asks.
 
 ## Workflow
 - Claude writes code and scenes here and pushes to `main`; Gabriel pulls and plays on his Arch laptop (RTX 4050). Performance target: 1080p 60 fps there.

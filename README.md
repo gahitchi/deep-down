@@ -5,6 +5,7 @@ A first-person horror game about a dying mountain village, an abandoned mine, an
 © 2026 Gabriel. All rights reserved — see [LICENSE](LICENSE).
 
 Design document: <https://claude.ai/artifact/Qzxnq9YQ5ByK6qZw1ZnAFZ>
+Roadmap: [docs/ROADMAP.md](docs/ROADMAP.md) (live version: <https://claude.ai/artifact/T3z4Nxph7qjtFj5cnJKX1a>)
 
 ## Run it
 
