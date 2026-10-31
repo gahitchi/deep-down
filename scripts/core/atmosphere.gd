@@ -100,6 +100,10 @@ func _build_environment() -> Environment:
 	env.ssil_enabled = true
 	env.ssil_intensity = 0.8
 
+	# Screen-space reflections: still water and wet rock reflect what's lit in front of them.
+	env.ssr_enabled = true
+	env.ssr_max_steps = 48
+
 	env.glow_enabled = true
 	env.glow_intensity = 0.6
 	env.glow_bloom = 0.04

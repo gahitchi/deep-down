@@ -28,6 +28,7 @@ Design document: <https://claude.ai/artifact/Qzxnq9YQ5ByK6qZw1ZnAFZ>
 | Crouch | Ctrl or C |
 | Jump | Space |
 | Lantern on/off | F |
+| Throw a flare (6 carried) | G |
 | Debug overlay (FPS, lighting) | F3 |
 | Free the mouse | Esc (click to capture it again) |
 
@@ -44,4 +45,5 @@ Design document: <https://claude.ai/artifact/Qzxnq9YQ5ByK6qZw1ZnAFZ>
 - First-person character: walk, sprint, crouch (won't stand up under a low ceiling), jump, head bob.
 - Hand lantern with soft shadows, flame flicker and a slight lag behind the camera.
 - Atmosphere that blends from open air to underground as rock closes in overhead: the sky light fades out, the air gets dusty (volumetric fog), and your eyes adapt slowly.
-- A temporary test level: a mine entrance, a timbered tunnel, a decline and a dark chamber, all placeholder geometry and procedural textures.
+- Throwable flares that light up big spaces for over a minute.
+- A temporary test level, all placeholder geometry and procedural textures: a mine entrance, a timbered tunnel with a side drift and a tall stope (old platforms and ladders), a decline, a chamber, and a large natural cavern with an underground lake and a shaft of daylight.

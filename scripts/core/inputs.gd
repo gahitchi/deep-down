@@ -11,6 +11,7 @@ const KEY_BINDINGS: Dictionary[StringName, Array] = {
 	&"sprint": [KEY_SHIFT],
 	&"crouch": [KEY_CTRL, KEY_C],
 	&"toggle_lantern": [KEY_F],
+	&"throw_flare": [KEY_G],
 	&"toggle_debug": [KEY_F3],
 }
 

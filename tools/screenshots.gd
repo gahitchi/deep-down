@@ -4,12 +4,15 @@ extends SceneTree
 ## (works headless on a GPU-less machine with xvfb-run and a software Vulkan driver)
 
 const SHOTS := [
-	# name, player position, yaw degrees, pitch degrees
+	# name, player position, yaw degrees, pitch degrees, [optional: where to drop a lit flare]
 	["01_outside", Vector3(0, 0.1, 12), 0.0, 4.0],
 	["02_entrance", Vector3(0, 0.1, 1.5), 0.0, 0.0],
 	["03_adit", Vector3(0, 0.1, -12), 0.0, -4.0],
 	["04_decline", Vector3(0, 0.1, -26.5), 0.0, -14.0],
 	["05_chamber", Vector3(0, -6.6, -55.5), 15.0, 2.0],
+	["06_stope", Vector3(4.6, 0.1, -12.6), 0.0, 38.0, Vector3(3.0, 0.3, -16.0)],
+	["07_cavern", Vector3(0, -6.7, -82), 0.0, 4.0, Vector3(-4.0, -6.5, -94.0)],
+	["08_lake", Vector3(-9, -6.7, -96), -71.0, 10.0],
 ]
 const SETTLE_FRAMES := 70
 
@@ -35,6 +38,13 @@ func _initialize() -> void:
 
 
 func _place(shot: Array) -> void:
+	for old in root.find_children("*", "Flare", true, false):
+		old.queue_free()
+	if shot.size() > 4:
+		var flare := Flare.new()
+		_level.add_child(flare)
+		flare.global_position = shot[4]
+		flare.freeze = true
 	_player.global_position = shot[1]
 	_player.velocity = Vector3.ZERO
 	_player.rotation.y = deg_to_rad(shot[2])

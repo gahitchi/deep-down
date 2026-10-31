@@ -21,6 +21,10 @@ extends CharacterBody3D
 @export var stand_height: float = 1.75
 @export var crouch_height: float = 1.1
 
+@export_group("Flares")
+@export var flares: int = 6 ## how many the player carries
+@export var throw_speed: float = 9.0
+
 @export_group("Head bob")
 @export var bob_amount: float = 0.035 ## metres of vertical sway at walking speed
 @export var bob_frequency: float = 1.9 ## steps per second at walking speed
@@ -50,6 +54,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			deg_to_rad(max_pitch_degrees)
 		)
 		_head.rotation.x = _pitch
+	elif event.is_action_pressed(&"throw_flare"):
+		throw_flare()
 	elif event.is_action_pressed(&"ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	elif event is InputEventMouseButton and event.is_pressed():
@@ -74,6 +80,20 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	_update_head_bob(delta)
+
+
+## Lights a flare and throws it where you're looking. Returns it, or null if none are left.
+func throw_flare() -> Flare:
+	if flares <= 0:
+		return null
+	flares -= 1
+	var flare := Flare.new()
+	get_parent().add_child(flare)
+	var forward := -_camera.global_basis.z
+	flare.global_position = _camera.global_position + forward * 0.5 + Vector3.DOWN * 0.15
+	flare.linear_velocity = velocity + (forward + Vector3.UP * 0.25).normalized() * throw_speed
+	flare.angular_velocity = Vector3(randf_range(-4, 4), randf_range(-4, 4), randf_range(-4, 4))
+	return flare
 
 
 func _current_speed() -> float:
