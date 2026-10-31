@@ -2,8 +2,7 @@ Copyright (c) 2026 Gabriel (GitHub: gahitchi). All rights reserved.
 
 This repository and everything in it is proprietary and confidential. This
 includes, without limitation: source code, game design, story, lore,
-characters and creatures (including "the Lumen"), names, artwork, models,
-audio and documentation.
+characters, creatures, names, artwork, models, audio and documentation.
 
 No permission is granted to use, copy, modify, merge, publish, distribute,
 sublicense, sell, or create derivative works from any part of this
@@ -12,3 +11,6 @@ the copyright holder.
 
 Access to or possession of this repository does not grant any license or
 other right, express or implied.
+
+Third-party assets included in this repository remain under their own
+licenses, listed in CREDITS.md when added.

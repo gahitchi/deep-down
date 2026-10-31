@@ -1,0 +1,35 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/levels/test_mine.gd" id="1_level"]
+[ext_resource type="Script" path="res://scripts/core/atmosphere.gd" id="2_atmosphere"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="3_player"]
+[ext_resource type="Script" path="res://scripts/ui/debug_overlay.gd" id="4_debug"]
+
+[node name="TestMine" type="Node3D"]
+script = ExtResource("1_level")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866, -0.354, 0.354, 0, 0.707, 0.707, -0.5, -0.612, 0.612, 0, 30, 0)
+light_color = Color(1, 0.9, 0.78, 1)
+light_energy = 1.4
+shadow_enabled = true
+directional_shadow_max_distance = 120.0
+
+[node name="Atmosphere" type="WorldEnvironment" parent="." node_paths=PackedStringArray("sun")]
+script = ExtResource("2_atmosphere")
+sun = NodePath("../Sun")
+
+[node name="Player" parent="." instance=ExtResource("3_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 12)
+
+[node name="DebugOverlay" type="CanvasLayer" parent="." node_paths=PackedStringArray("atmosphere")]
+script = ExtResource("4_debug")
+atmosphere = NodePath("../Atmosphere")
+
+[node name="Label" type="Label" parent="DebugOverlay"]
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 400.0
+offset_bottom = 120.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4

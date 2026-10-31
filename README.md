@@ -1,63 +1,47 @@
 # Deep Down
 
-A 2.5D co-op digging adventure for Roblox: dig through a living underground, tame creatures as companions, relight the hidden statues and free the Lumen. (Working title.)
+A first-person horror game about a dying mountain village, an abandoned mine, and the old tales that lead deeper into it than anyone should go. Built with Godot 4, for PC (Steam). Working title.
 
 © 2026 Gabriel. All rights reserved — see [LICENSE](LICENSE).
 
-## How the project works
+Design document: <https://claude.ai/artifact/Qzxnq9YQ5ByK6qZw1ZnAFZ>
 
-All game code lives in `src/` as plain `.luau` files. [Rojo](https://rojo.space) syncs those files live into Roblox Studio, so the files are the source of truth, not the saved place.
+## Run it
 
-| Folder | Ends up in Studio as | Runs on |
-| --- | --- | --- |
-| `src/shared` | `ReplicatedStorage.Shared` | both (modules) |
-| `src/server` | `ServerScriptService.Server` | server |
-| `src/client` | `StarterPlayer.StarterPlayerScripts.Client` | each player |
-
-File names decide script types: `*.server.luau` is a Script, `*.client.luau` is a LocalScript, anything else is a ModuleScript.
-
-## One-time setup (Linux)
-
-1. **Install Rokit**, the toolchain manager:
-
-   ```sh
-   curl -sSf https://raw.githubusercontent.com/rojo-rbx/rokit/main/scripts/install.sh | bash
-   ```
-
-   Restart the terminal afterwards so `rokit` is on your PATH.
-
-2. **Clone the repo and install the tools** (Rojo, Selene, StyLua, at the versions in `rokit.toml`):
+1. Install **Godot 4.7.2** (standard build, not .NET). On Arch, `sudo pacman -S godot` works if the repo version is 4.7.x; otherwise download the Linux build from <https://godotengine.org/download>.
+2. Clone and open:
 
    ```sh
    git clone https://github.com/gahitchi/deep-down.git
-   cd deep-down
-   rokit install
    ```
 
-   Rokit asks you to trust each tool the first time; say yes.
+   In Godot's Project Manager, click **Import**, pick `deep-down/project.godot`, then **Import & Edit**. The first import takes a minute.
+3. Press **F5** (or the play button, top right) to run the test level.
 
-3. **Install the Rojo plugin in Studio.** Download `Rojo.rbxm` from the [Rojo 7.7.1 release](https://github.com/rojo-rbx/rojo/releases/tag/v7.7.1). In Studio open the **Plugins** tab, click **Plugins Folder**, drop `Rojo.rbxm` into the folder that opens, and restart Studio. The plugin version must match the `rojo` version in `rokit.toml`.
+## Controls
 
-## Every session
+| Action | Key |
+| --- | --- |
+| Move | WASD or arrows |
+| Look | Mouse |
+| Sprint | Shift |
+| Crouch | Ctrl or C |
+| Jump | Space |
+| Lantern on/off | F |
+| Debug overlay (FPS, lighting) | F3 |
+| Free the mouse | Esc (click to capture it again) |
 
-```sh
-cd deep-down
-git pull
-rojo serve
-```
+## Project layout
 
-Then in Studio: open a **Baseplate** (or our saved place), click **Rojo → Connect** in the Plugins tab, and press **Play**. You should see the build version (for example `Deep Down v0.1.0 (dev)`) in the bottom-left corner and two `[Deep Down]` lines in the Output window.
+| Folder | What's in it |
+| --- | --- |
+| `scenes/` | Godot scenes: `player/`, `levels/` |
+| `scripts/` | GDScript, by area: `core/` (input, atmosphere, materials), `player/`, `levels/`, `ui/` |
+| `tools/` | Developer tools, such as the screenshot script |
 
-While `rojo serve` is running, any change to the files (from `git pull` or your editor) appears in Studio within a second.
+## What exists so far
 
-## Checks
-
-```sh
-stylua src        # format
-selene src        # lint
-rojo build -o deep-down.rbxl   # build a place file without Studio
-```
-
-## Design
-
-The game design document lives in Claude Docs: <https://claude.ai/artifact/XUmpncZM4veQo7jxXQfmdG>
+- First-person character: walk, sprint, crouch (won't stand up under a low ceiling), jump, head bob.
+- Hand lantern with soft shadows, flame flicker and a slight lag behind the camera.
+- Atmosphere that blends from open air to underground as rock closes in overhead: the sky light fades out, the air gets dusty (volumetric fog), and your eyes adapt slowly.
+- A temporary test level: a mine entrance, a timbered tunnel, a decline and a dark chamber, all placeholder geometry and procedural textures.

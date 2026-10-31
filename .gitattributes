@@ -1,0 +1,11 @@
+# Normalize line endings for text files; keep Godot scene and resource files diff-friendly.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.exr binary
+*.hdr binary
+*.glb binary
+*.wav binary
+*.ogg binary
+*.so binary
+*.dll binary
