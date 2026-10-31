@@ -2,6 +2,8 @@
 
 A first-person horror game about a dying mountain village, an abandoned mine, and the old tales that lead deeper into it than anyone should go. Built with Godot 4, for PC (Steam). Working title.
 
+**Status: on hold** while a smaller learning project comes first. See the roadmap.
+
 © 2026 Gabriel. All rights reserved — see [LICENSE](LICENSE).
 
 Design document: <https://claude.ai/artifact/Qzxnq9YQ5ByK6qZw1ZnAFZ>

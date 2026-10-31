@@ -9,8 +9,8 @@ The Roblox prototype that came before is on the `archive/roblox-prototype` branc
 ## Direction in one paragraph
 Grounded horror in the abandoned deep workings of a mine on a remote mountainous island (inspired by Sardinia's mining coast, changeable weather), below a dying village in the 2010s that runs on 80s and 90s equipment. No combat. Environmental horror in act one; a strange creature arrives mid-game. Realism is a priority: lighting and presentation that behave like real eyes, realistic materials, real mining logic in level design, big open spaces as well as tunnels. The story is personal and existential (duality of surface and depth; Buddhist, existentialist and nihilist ideas voiced by different elders), never preached.
 
-## Current phase
-Pre-production (roadmap phase 0): defining the product before more code. Don't start new features unless Gabriel asks.
+## Current status
+On hold since 31 October 2026. Gabriel is learning game development on a smaller Roblox project first; Deep Down resumes later in pre-production (roadmap phase 0). Don't start new features here unless Gabriel asks.
 
 ## Workflow
 - Claude writes code and scenes here and pushes to `main`; Gabriel pulls and plays on his Arch laptop (RTX 4050). Performance target: 1080p 60 fps there.

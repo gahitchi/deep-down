@@ -4,6 +4,8 @@ As of 31 October 2026. The live, editable version (with checkboxes and a drawn o
 
 Ten phases from today to launch, each closed by a gate: the game only moves on when the gate's questions get a yes.
 
+> **Status: on hold** since 31 October 2026, while Gabriel learns game development on a smaller Roblox project first. Deep Down will only be released when it's curated and polished enough to deserve its price.
+
 ## At a glance
 
 | Phase | Focus | Status |
