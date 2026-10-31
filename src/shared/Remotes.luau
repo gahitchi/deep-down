@@ -38,5 +38,7 @@ end
 return table.freeze({
 	DigBlock = event("DigBlock"), -- client -> server: (col: number, row: number)
 	ReturnToSurface = event("ReturnToSurface"), -- client -> server: ()
+	BuyUpgrade = event("BuyUpgrade"), -- client -> server: (kind: "pickaxe" | "backpack")
 	Notify = event("Notify"), -- server -> client: (message: string)
+	Swing = event("Swing"), -- server -> all clients: (player, col, row, blockId, broke)
 })

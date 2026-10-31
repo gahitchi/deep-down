@@ -6,7 +6,7 @@ export type BlockDef = {
 	name: string,
 	color: Color3,
 	material: Enum.Material,
-	hardness: number, -- hits needed at pickaxe power 1
+	hardness: number, -- damage needed to break it (a Rusty Pickaxe does 1 per hit)
 	value: number, -- coins when sold; 0 = not collected
 	diggable: boolean,
 }
@@ -35,7 +35,7 @@ local defs: { [number]: BlockDef } = {
 		name = "Dirt",
 		color = Color3.fromRGB(134, 94, 60),
 		material = Enum.Material.Ground,
-		hardness = 2,
+		hardness = 1,
 		value = 0,
 		diggable = true,
 	},
@@ -44,7 +44,7 @@ local defs: { [number]: BlockDef } = {
 		name = "Stone",
 		color = Color3.fromRGB(112, 112, 120),
 		material = Enum.Material.Slate,
-		hardness = 4,
+		hardness = 2,
 		value = 0,
 		diggable = true,
 	},
@@ -53,7 +53,7 @@ local defs: { [number]: BlockDef } = {
 		name = "Copper",
 		color = Color3.fromRGB(222, 132, 62),
 		material = Enum.Material.Slate,
-		hardness = 4,
+		hardness = 3,
 		value = 5,
 		diggable = true,
 	},
